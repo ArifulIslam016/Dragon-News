@@ -11,5 +11,9 @@
   /* -- color-base-100: #F3F3F3; */
   --color-active-100: #E7E7E7;
   --color-text-100: #403F3F;
-
 }
+ /* @layer components{
+  .active{
+  @apply bg-base-300;
+}
+ } */

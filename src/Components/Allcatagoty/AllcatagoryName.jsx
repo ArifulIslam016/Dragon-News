@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import './Allcatagory.css'
 const catagoryPromise=fetch('/categories.json').then(res=>res.json())
 const Allcatagory = () => {
     const catagoryData=use(catagoryPromise)
