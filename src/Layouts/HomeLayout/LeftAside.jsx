@@ -1,9 +1,10 @@
 import React from 'react';
+import Allcatagory from '../../Components/Allcatagoty/AllcatagoryName';
 
 const LeftAside = () => {
     return (
         <div>
-            <h1>All catgory</h1>
+           <Allcatagory></Allcatagory>
         </div>
     );
 };

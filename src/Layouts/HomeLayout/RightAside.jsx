@@ -1,9 +1,10 @@
 import React from 'react';
+import Login from '../../Components/Login/Login';
 
 const RightAside = () => {
     return (
         <div>
-            <h1>Right Aside</h1>
+            <Login></Login>
         </div>
     );
 };

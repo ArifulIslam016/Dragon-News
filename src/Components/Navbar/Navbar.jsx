@@ -13,7 +13,7 @@ const Navbar = () => {
                 </section>
                 <section className='flex items-center gap-3'>
                     <img src={usrImg} alt="Iamge of user profile" />
-                    <button className='btn btn-primary' >Login</button>
+                    <button className='btn btn-primary px-10 py-1' >Login</button>
                 </section>
         </div>
     );
