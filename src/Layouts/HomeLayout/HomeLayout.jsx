@@ -8,8 +8,7 @@ import RightAside from "./RightAside";
 
 const HomeLayout = () => {
   return (
-    <div>
-      <Header></Header>
+    <div>      <Header></Header>
       {/* latest section */}
       <section className="w-11/12 mx-auto pt-8">
               <Latest></Latest>
@@ -29,7 +28,7 @@ const HomeLayout = () => {
             <Outlet></Outlet>
           </section>
           {/* Right Aside here */}
-      <aside className="col-span-3 sticky top-0 h-fit
+      <aside className="col-span-3  top-0 h-fit sticky
       ">
         <RightAside></RightAside>
       </aside>

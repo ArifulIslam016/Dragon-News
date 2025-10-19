@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className='flex justify-around items-center'>
                 <section></section>
                 <section className='flex gap-4 items-center'>
-                    <NavLink to={'/home'}>Home</NavLink>
+                    <NavLink to={'/'}>Home</NavLink>
                     <NavLink to={'/about'}>About</NavLink>
                     <NavLink to={'/career'}>Career</NavLink>
                 </section>
@@ -18,5 +18,5 @@ const Navbar = () => {
         </div>
     );
 };
-
+ 
 export default Navbar;
