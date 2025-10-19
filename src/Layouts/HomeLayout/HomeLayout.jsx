@@ -21,7 +21,7 @@ const HomeLayout = () => {
       </nav>
       <main className="grid grid-cols-12 w-11/12 mx-auto mt-10"> 
         {/* left aside here */}
-        <aside className="col-span-3">
+        <aside className="col-span-3 sticky top-0 h-fit">
           <LeftAside></LeftAside>
         </aside>
         {/* Middle Part Here */}
@@ -29,7 +29,8 @@ const HomeLayout = () => {
             <Outlet></Outlet>
           </section>
           {/* Right Aside here */}
-      <aside className="col-span-3">
+      <aside className="col-span-3 sticky top-0 h-fit
+      ">
         <RightAside></RightAside>
       </aside>
       </main>
