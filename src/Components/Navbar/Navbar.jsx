@@ -1,22 +1,34 @@
-import React from 'react';
-import { NavLink } from 'react-router';
-import usrImg from '../../assets/user.png'
+import React, { use } from "react";
+import { Link, NavLink } from "react-router";
+import usrImg from "../../assets/user.png";
+import { AuthContext } from "../../AuthContext/AunContext";
 
 const Navbar = () => {
-    return (
-        <div className='flex justify-around items-center'>
-                <section></section>
-                <section className='flex gap-4 items-center'>
-                    <NavLink to={'/'}>Home</NavLink>
-                    <NavLink to={'/about'}>About</NavLink>
-                    <NavLink to={'/career'}>Career</NavLink>
-                </section>
-                <section className='flex items-center gap-3'>
-                    <img src={usrImg} alt="Iamge of user profile" />
-                    <button className='btn btn-primary px-10 py-1' >Login</button>
-                </section>
-        </div>
-    );
+  const { user, logOut } = use(AuthContext);
+  const handleLogin = () => {
+    logOut();
+  };
+  return (
+    <div className="flex justify-around items-center">
+      <section></section>
+      <section className="flex gap-4 items-center">
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/about"}>About</NavLink>
+        <NavLink to={"/career"}>Career</NavLink>
+      </section>
+      <section className="flex items-center gap-3">
+        <img src={usrImg} alt="Iamge of user profile" />
+        {user ? (
+          <button className="btn btn-primary px-10 py-1" onClick={handleLogin}>LogOut</button>
+        ) : (
+          <Link to={"/auth/login"}>
+            {" "}
+            <button className="btn btn-primary px-10 py-1">Login</button>
+          </Link>
+        )}
+      </section>
+    </div>
+  );
 };
- 
+
 export default Navbar;
