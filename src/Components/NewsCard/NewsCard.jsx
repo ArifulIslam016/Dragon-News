@@ -1,6 +1,7 @@
 import React from "react";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   return (
@@ -44,7 +45,7 @@ const NewsCard = ({ news }) => {
         <p className="text-gray-700 text-sm line-clamp-3">
           {news.details}
         </p>
-        <p className="text-red-500 mt-2 cursor-pointer">Read More</p>
+        <Link to={`/news-details/${news.id}`} className="text-red-500 mt-2 cursor-pointer">Read More</Link>
       </div>
 
       {/* Footer: Rating & Views */}

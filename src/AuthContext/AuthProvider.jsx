@@ -25,7 +25,7 @@ const AuthProvider = ({children}) => {
         logOut,
         signIN
     }
-    console.log(user)
+    
     return <AuthContext value={userInfo}>
         {children}
     </AuthContext>;
