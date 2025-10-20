@@ -26,9 +26,9 @@ const Register = () => {
         const UserData = result.user;
         LetsUdateProfile(Profile);
           setError("");
-        if (user) {
+        
           navigate("/");
-        }
+        
       })
       .catch((err) => {setError(err.message)
         return
