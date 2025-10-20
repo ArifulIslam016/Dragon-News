@@ -14,6 +14,10 @@ const NewsDetails = () => {
       
        setnewsData(clickedNewsData)
     },[NewsData,Id])
+    useEffect(()=>{
+
+        window.scrollTo({top:0,behavior:'smooth'})
+    },[])
     // console.log(newsData,Id)
 
     return (
@@ -28,7 +32,7 @@ const NewsDetails = () => {
                 <NewSDatailedCard newsData={newsData}></NewSDatailedCard>
               </section>
               {/* Right Aside */}
-              <section className='col-span-3'>
+              <section className='col-span-3 NewDetails'>
                 <RightAside></RightAside>
               </section>
 
