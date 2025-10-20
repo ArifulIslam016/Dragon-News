@@ -28,7 +28,7 @@ const HomeLayout = () => {
             <Outlet></Outlet>
           </section>
           {/* Right Aside here */}
-      <aside className="col-span-3  top-0 h-fit sticky
+      <aside className="col-span-3  top-0 h-fit sticky scroll-smooth
       ">
         <RightAside></RightAside>
       </aside>

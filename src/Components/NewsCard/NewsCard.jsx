@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   return (
-    <div className="max-w-2xl bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 mx-3 mt-1">
+    <div className="max-w-4xl bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 mx-3 mt-1">
       {/* Author Info */}
       <div className="flex items-center px-4 py-3">
         <img

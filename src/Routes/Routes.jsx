@@ -6,43 +6,43 @@ import Register from "../Pages/Register";
 import Login from "../Pages/LoginForm";
 import AuthLayout from "../Layouts/AuthLayout/AuthLayout";
 import NewsDetails from "../Layouts/NewsDetails/NewsDetails";
+import PrivateProvider from "../PrivateProvider/PrivateProvider";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
-    children:[
-      {path:'',
-        Component: Home
-      },
+    children: [
+      { path: "", Component: Home },
       {
-        path: 'catagories/:id',
-        loader:()=> fetch('/news.json'),
-        Component: Catagory
-      }
-
-    ]
+        path: "catagories/:id",
+        loader: () => fetch("/news.json"),
+        Component: Catagory,
+      },
+    ],
   },
   {
     path: "/auth",
     element: <AuthLayout></AuthLayout>,
-    children:[
-    {
-      path:'/auth/login',
-      element: <Login></Login>
-    },
-    {
-      path: '/auth/register',
-      element: <Register></Register>
-    }
-    ]
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
+    ],
   },
   {
-    path: '/news-details/:id',
-    loader:()=> fetch('/news.json'),
-    element: <NewsDetails></NewsDetails>,
-    
-  }
-  
+    path: "/news-details/:id",
+    loader: () => fetch("/news.json"),
+    element: (
+      <PrivateProvider>
+        <NewsDetails></NewsDetails>,
+      </PrivateProvider>
+    ),
+  },
 ]);
 export default router;
