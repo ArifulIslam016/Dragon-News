@@ -2,12 +2,16 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import usrImg from "../../assets/user.png";
 import { AuthContext } from "../../AuthContext/AunContext";
+import Loading from "../Loading";
 
 const Navbar = () => {
-  const { user, logOut } = use(AuthContext);
+  const { user, logOut,loading } = use(AuthContext);
   const handleLogin = () => {
     logOut();
   };
+  if(loading){
+    return <Loading></Loading>
+  }
   return (
     <div className="flex justify-around items-center">
       <section></section>
@@ -17,7 +21,7 @@ const Navbar = () => {
         <NavLink to={"/career"}>Career</NavLink>
       </section>
       <section className="flex items-center gap-3">
-        <img src={usrImg} alt="Iamge of user profile" />
+        <img className="rounded-full max-w-[80px]" src={`${user.photoURL? user.photoURL:usrImg}`} alt="Iamge of user profile" />
         {user ? (
           <button className="btn btn-primary px-10 py-1" onClick={handleLogin}>LogOut</button>
         ) : (

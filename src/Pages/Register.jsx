@@ -3,25 +3,36 @@ import { Link, Navigate, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContext/AunContext";
 
 const Register = () => {
-const [error,setError]=useState()
-  const { user, setUser, createUser } = use(AuthContext);
-  const navigate=useNavigate()
+  const [error, setError] = useState();
+  const { user, setUser, LetsUdateProfile, createUser } = use(AuthContext);
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photoUrl = e.target.PhotoUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-      if(password.length<6){
-      setError("Passord Must be atleast 6 charecters")
-      return
+    const Profile = {
+      displayName: name,
+      photoURL: photoUrl,
+    };
+    if (password.length < 6) {
+      setError("Passord Must be atleast 6 charecters");
+      return;
     }
-    createUser(email,password).then(result=>{
-        setError("")
-          if(user){
-          navigate('/')
+    createUser(email, password)
+      .then((result) => {
+        const UserData = result.user;
+        LetsUdateProfile(Profile);
+          setError("");
+        if (user) {
+          navigate("/");
         }
-     }).catch(err=>setError(err.message))
+      })
+      .catch((err) => {setError(err.message)
+        return
+      });
   };
   return (
     <div className="hero bg-base-200 min-h-screen ">
