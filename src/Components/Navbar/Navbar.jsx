@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavLink to={"/career"}>Career</NavLink>
       </section>
       <section className="flex items-center gap-3">
-        <img className="rounded-full max-w-[80px]" src={`${user.photoURL? user.photoURL:usrImg}`} alt="Iamge of user profile" />
+        <img className="rounded-full max-w-[80px]" src={`${user?.photoURL? user.photoURL:usrImg}`} alt="Iamge of user profile" />
         {user ? (
           <button className="btn btn-primary px-10 py-1" onClick={handleLogin}>LogOut</button>
         ) : (
