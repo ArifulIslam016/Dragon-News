@@ -1,18 +1,26 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContext/AunContext";
 
 const Register = () => {
 const [error,setError]=useState()
-  const { setUser, createUser } = use(AuthContext);
+  const { user, setUser, createUser } = use(AuthContext);
+  const navigate=useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photoUrl = e.target.PhotoUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+      if(password.length<6){
+      setError("Passord Must be atleast 6 charecters")
+      return
+    }
     createUser(email,password).then(result=>{
         setError("")
+          if(user){
+          navigate('/')
+        }
      }).catch(err=>setError(err.message))
   };
   return (

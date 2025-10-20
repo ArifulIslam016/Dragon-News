@@ -1,17 +1,23 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContext/AunContext";
 
 const Login = () => {
+  const [error, seterror]=useState('')
+  const location=useLocation();
+const navigate=useNavigate();  
   const { signIN } = use(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    signIN(email, password).then(res=>alert("signinSuccessful")).catch(err=>{
+    signIN(email, password).then(()=>{
+      {location.state? navigate(location.state):navigate('/')}
+      
+    }).catch(err=>{
       const code=err.code;
       const message=err.message;
-      alert(code,message)
+      seterror(message)
     });
   };
   return (
@@ -31,6 +37,7 @@ const Login = () => {
                 className="input"
                 placeholder="Email"
                 name="email"
+                required
               />
               <label className="label text-lg text-black font-semibold">
                 Password
@@ -40,6 +47,7 @@ const Login = () => {
                 className="input"
                 placeholder="Password"
                 name="password"
+                required
               />
               <div>
                 <a className="link link-hover">Forgot password?</a>
@@ -53,6 +61,9 @@ const Login = () => {
               Register
             </Link>
           </p>
+          {
+            error && <p className="text-red-500">{error}</p>
+          }
         </div>
       </div>
     </div>
