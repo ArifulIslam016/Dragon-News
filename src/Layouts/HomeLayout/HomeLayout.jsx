@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
-import { Outlet, useNavigation } from "react-router";
+import { Outlet, useLoaderData, useNavigation } from "react-router";
 import Latest from "../../Components/Latest/Latest";
 import Navbar from "../../Components/Navbar/Navbar";
 import LeftAside from "./LeftAside";
@@ -8,6 +8,8 @@ import RightAside from "./RightAside";
 import Loading from "../../Components/Loading";
 
 const HomeLayout = () => {
+  const NewsData=useLoaderData()
+  
   const { state } = useNavigation();
 
   return (
@@ -16,7 +18,7 @@ const HomeLayout = () => {
       <Header></Header>
       {/* latest section */}
       <section className="w-11/12 mx-auto pt-8">
-        <Latest></Latest>
+        <Latest NewsData={NewsData}></Latest>
       </section>
       {/* Navbar section */}
       <nav className="w-11/12 mx-auto pt-8">
