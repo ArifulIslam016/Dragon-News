@@ -12,7 +12,7 @@ const QZone = () => {
                 <img src={swimingImg} className='p-3' alt="swiming image" />
                 <img src={classImg} className='p-3' alt="ClassRoom Image" />
                 <img src={playGroundImg} className='p-3' alt="Playground Image" />
-                <img src={bgImage} className='p-3 bg-white ForDetailPage' alt="Playground Image" />
+                <img src={bgImage} className='p-3 hidden md:block bg-white ForDetailPage' alt="Playground Image" />
                 
             </div>
         </div>

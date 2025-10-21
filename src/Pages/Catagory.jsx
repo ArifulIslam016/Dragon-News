@@ -26,7 +26,7 @@ const Catagory = () => {
   }, [catagoriesData, catagoryId]);
 
   return (
-    <div>
+    <div className="pl-4">
       <h1>
         Total {newsData.length} News found
       </h1>

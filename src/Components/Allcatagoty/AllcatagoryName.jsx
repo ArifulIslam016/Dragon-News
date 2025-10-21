@@ -7,7 +7,7 @@ const Allcatagory = () => {
     return (
         <div className='pl-12' >
             <h1> All Catagory {catagoryData.length}</h1>
-        <div className='grid grid-cols-1 space-y-2 mt-5'>
+        <div className='grid gap-2 md:gap-0 grid-cols-3 md:grid-cols-1 space-y-2 mt-5'>
                 {
                 catagoryData.map(singleCatagory=> <NavLink to={`catagories/${singleCatagory.id}`} className='text-[#9F9F9F] btn py-4 bg-white outline-0' key={singleCatagory.id}>{singleCatagory.name}</NavLink>)
             }
@@ -17,3 +17,4 @@ const Allcatagory = () => {
 };
 
 export default Allcatagory;
+// className=' grid grid-cols-4'

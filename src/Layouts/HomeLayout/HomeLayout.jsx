@@ -22,18 +22,18 @@ const HomeLayout = () => {
       <nav className="w-11/12 mx-auto pt-8">
         <Navbar></Navbar>
       </nav>
-      <main className="grid grid-cols-12 w-11/12 mx-auto mt-10">
+      <main className="grid md:grid-cols-12  md:w-11/12 mx-auto mt-10">
         {/* left aside here */}
-        <aside className="col-span-3 sticky top-0 h-fit">
+        <aside className="md:block md:col-span-3 md:sticky top-0 h-fit">
           <LeftAside></LeftAside>
         </aside>
         {/* Middle Part Here */}
-        <section className="col-span-6">
+        <section className=" mx-auto md:col-span-6">
           {state === "loading" ? <Loading></Loading> : <Outlet></Outlet>}
         </section>
         {/* Right Aside here */}
         <aside
-          className="col-span-3  top-0 h-fit sticky scroll-smooth
+          className="md:col-span-3  top-0 h-fit md:sticky scroll-smooth
       "
         >
           <RightAside></RightAside>
