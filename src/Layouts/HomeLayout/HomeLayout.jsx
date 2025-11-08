@@ -35,7 +35,7 @@ const HomeLayout = () => {
         </section>
         {/* Right Aside here */}
         <aside
-          className="md:col-span-3  top-0 h-fit md:sticky scroll-smooth
+          // className="md:col-span-3  top-0 h-fit md:sticky scroll-smooth
       "
         >
           <RightAside></RightAside>

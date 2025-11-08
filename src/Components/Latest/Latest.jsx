@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee';
 
 const Latest = ({NewsData}) => {
    const filterdData=  NewsData.filter(singleData=>singleData.others.is_trending===true)
-     console.log(filterdData);
+    
      
     
     return (
